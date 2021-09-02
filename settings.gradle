@@ -1,0 +1,9 @@
+rootProject.name = 'Meteor-Externals'
+
+include("hoot-agility")
+include("hoot-fighter")
+
+for (project in rootProject.children) {
+    project.projectDir = file(project.name)
+    project.buildFileName = "${project.name.toLowerCase()}.gradle"
+}

@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'meteor'
+version '1.0-SNAPSHOT'
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        implementation(files("../lib/meteor-client-1.0.21-all.jar"))
+    }
+
+    build {
+        finalizedBy("copyPlugin")
+    }
+
+    task copyPlugin(type: Copy) {
+        from "build/libs/"
+        into "${System.getProperty("user.home")}/.meteorlite/externals/"
+        include "*.jar"
+    }
+}
+
+
