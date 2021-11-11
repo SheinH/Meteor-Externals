@@ -9,7 +9,7 @@ subprojects {
     apply plugin: 'java'
 
     dependencies {
-        implementation(files("../lib/meteor-client-1.0.21-all.jar"))
+        implementation(files("../lib/meteor-client-1.0.36-all.jar"))
     }
 
     build {
